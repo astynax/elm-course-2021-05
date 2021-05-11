@@ -14,3 +14,9 @@
 #+begin_quote
 В модуле Lesson02.elm реализовать функцию "move", проверяющую валидность хода.
 #+end_quote
+** Игра "Columns"
+*** How to
+1. Установить компилятор Elm
+2. Выполнить ~elm install~
+3. Запустить ~elm reactor~
+4. Открыть в браузере http://localhost:8000/Columns.elm
