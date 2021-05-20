@@ -22,7 +22,6 @@ main =
             empty
                 |> put Red V1 ( V1, V4 )
                 |> put Blue V1 ( V1, V3 )
-                -- |> move ( V1, V3 ) ( V2, V4 ) bug diagonal
                 |> move ( V1, V3 ) ( V2, V3 )
                 |> move ( V1, V4 ) ( V2, V4 )
     in
@@ -84,12 +83,17 @@ validateXY from to field =
     (validate fromX toX && validate fromY toY)
         && not (isSameCell from to)
         && not (isOccupiedByEnemy from to field)
+        && not (isDiagonalMove from to)
 
 
 isSameCell : ( D4, D4 ) -> ( D4, D4 ) -> Bool
 isSameCell from to =
     from == to
 
+
+isDiagonalMove : (D4, D4) -> (D4, D4) -> Bool
+isDiagonalMove (fromX, fromY) (toX, toY) =
+    fromX /= toX && fromY /= toY
 
 isOccupiedByEnemy : ( D4, D4 ) -> ( D4, D4 ) -> Field -> Bool
 isOccupiedByEnemy ( fromX, fromY ) ( toX, toY ) field =
