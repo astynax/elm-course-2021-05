@@ -9,17 +9,16 @@ import Columns.Render
 main : Html msg
 main =
     let
-        put p v (x, y) = Field.put (Occupied p v) x y
         example =
             Field.empty
-                |> put Blue V1 (V1, V1)
-                |> put Blue V3 (V2, V1)
-                |> put Blue V2 (V3, V1)
-                |> put Blue V4 (V4, V1)
-                |> put Red V4 (V1, V4)
-                |> put Red V2 (V2, V4)
-                |> put Red V3 (V3, V4)
-                |> put Red V1 (V4, V4)
+                |> Field.put (Occupied Blue V1) (V1, V1)
+                |> Field.put (Occupied Blue V3) (V2, V1)
+                |> Field.put (Occupied Blue V2) (V3, V1)
+                |> Field.put (Occupied Blue V4) (V4, V1)
+                |> Field.put (Occupied Red V4) (V1, V4)
+                |> Field.put (Occupied Red V2) (V2, V4)
+                |> Field.put (Occupied Red V3) (V3, V4)
+                |> Field.put (Occupied Red V1) (V4, V4)
         try f x = Maybe.withDefault x (f x)
     in example
         |> try (Field.move (V1, V1) (V1, V2))
