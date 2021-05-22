@@ -8,8 +8,9 @@ import Collage.Render exposing (svgBox)
 import Color exposing (Color)
 import Html exposing (Html)
 
-import Columns.Vec4 as Vec4 exposing (D4(..))
+import Columns.D4 as D4 exposing (D4(..))
 import Columns.Field exposing (Field, Player(..), Cell(..))
+import Columns.Vec4 as Vec4
 
 svg : Field -> Html msg
 svg = svgBox (400, 400) << L.center << field

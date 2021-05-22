@@ -1,6 +1,5 @@
 module Columns.Vec4 exposing
     ( Vec4(..)
-    , D4(..)
     , fill
     , map
     , toList
@@ -8,7 +7,7 @@ module Columns.Vec4 exposing
     , update
     )
 
-type D4 = V1 | V2 | V3 | V4
+import Columns.D4 exposing (D4(..))
 
 type Vec4 a = Vec4 a a a a
 
