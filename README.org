@@ -14,6 +14,11 @@
 #+begin_quote
 В модуле Lesson02.elm реализовать функцию "move", проверяющую валидность хода.
 #+end_quote
+*** 3
+[[file:Lesson03.elm][Код]]. Задание:
+#+begin_quote
+В модуле Lesson03.elm реализовать функцию "doTurn"
+#+end_quote
 ** Игра "Columns"
 *** How to
 1. Установить компилятор Elm
